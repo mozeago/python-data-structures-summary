@@ -19,4 +19,9 @@ mutable and is unordered
 ##### Dictionaries  
 Allow us to store values in the form of `key``value pairs.  
 created using the {} and can allow nesting   
+#### User-Defined Data Structures  
+they are :
+1. Ques
+2. Stack
+3. Tree
 
