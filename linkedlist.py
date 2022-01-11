@@ -9,8 +9,7 @@ class LinkedList:
         self.head = None
 
     def insert_at_beginning(self, data):
-        new_node = Node(data, self.head)
-        self.head = new_node
+        self.head = Node(data, self.head)
 
     def print_linked_list(self):
         if self.head is None:
@@ -37,12 +36,13 @@ class LinkedList:
 
 if __name__ == '__main__':
     linked_list = LinkedList()
-    # linked_list.insert_at_beginning(45)
-    # linked_list.insert_at_beginning(5)
-    # linked_list.insert_at_beginning(4)
-    linked_list.insert_at_the_end(41)
-    linked_list.insert_at_the_end(14)
-    linked_list.insert_at_the_end(24)
-    linked_list.insert_at_the_end(34)
+    linked_list.insert_at_beginning(45)
+    linked_list.insert_at_beginning(5)
+    linked_list.insert_at_beginning(4)
+# linked_list.insert_at_the_end(41)
+# linked_list.insert_at_the_end(14)
+# linked_list.insert_at_the_end(24)
+# linked_list.insert_at_the_end(34)
 
-    linked_list.print_linked_list()
+linked_list.print_linked_list()
+print("linked list head is:---->"+str(linked_list.head.data))
