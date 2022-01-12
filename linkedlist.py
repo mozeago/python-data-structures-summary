@@ -34,6 +34,8 @@ class LinkedList:
         iterate_linked_list.next = Node(data)
 
 
+
+
 if __name__ == '__main__':
     linked_list = LinkedList()
     linked_list.insert_at_beginning(45)
