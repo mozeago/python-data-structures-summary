@@ -24,6 +24,8 @@ class LinkedList:
         while iterate_ll:
             print(iterate_ll.node_data)
             iterate_ll = iterate_ll.next_node
+    def insert_at_index(self):
+
 
 
 doublyll = LinkedList()
