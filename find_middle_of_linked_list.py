@@ -31,13 +31,24 @@ class LinkedList:
             return slow_pointer.data
         else:
             return (slow_pointer.data + prev_slow_pointer.data) / 2
+
+    def print_linked_list(self):
+        if self.head is None:
+            print("Empty Linked List")
+        # get the starting point of the LinkedList
+        iterate_linked_list = self.head
+        linked_list_string = ''
+        while iterate_linked_list:
+            linked_list_string += str(iterate_linked_list.data) + '-->'
+            iterate_linked_list = iterate_linked_list.next
+        print(linked_list_string)
+
+
 if __name__ == "__main__":
     ll = LinkedList()
     ll.insert_at_beginning(9)
-    ll.insert_at_beginning(1)
+    ll.insert_at_beginning(8)
     ll.insert_at_beginning(7)
-    ll.insert_at_beginning(3)
-    ll.insert_at_beginning(10)
-    ll.print_LL()
+    ll.insert_at_beginning(6)
     print("Count is " + str(ll.count))
     print(ll.get_median())
