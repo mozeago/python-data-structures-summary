@@ -24,13 +24,13 @@ class LinkedList():
             iterate_linked_list = iterate_linked_list.next
         print(linked_list_string)
 
+
     def delete_linked_list(self):
         current = self.head
         while current:
             prev = current.next
             del current.data
             current = prev
-
 
 if __name__ == "__main__":
     ll = LinkedList()
