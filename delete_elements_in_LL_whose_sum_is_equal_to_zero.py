@@ -4,10 +4,8 @@ class Node:
         self.next = next
 
 
-# Delete Middle of Linked List
-# Given a singly linked list, delete middle of the linked list. For example, if given linked list is 1->2->3->4->5 then linked list should be modified to 1->2->4->5.
-# If there are even nodes, then there would be two middle nodes, we need to delete the second middle element. For example, if given linked list is 1->2->3->4->5->6 then it should be modified to 1->2->3->5->6.
-# If the input linked list is NULL or has 1 node, then it should return NULL
+# Given some resources in the form of linked list you have to canceled out all the resources whose sum up to 0(Zero)
+# and return the remaining list.
 class LinkedList():
     def __init__(self):
         self.head = None
@@ -28,30 +26,25 @@ class LinkedList():
             iterate_linked_list = iterate_linked_list.next
         print(linked_list_string)
 
-    def get_middle_node(self):
+    def sum_of_two_LL(self):
         slow_pointer = self.head
         fast_pointer = self.head
         prev_slow_pointer = self.head
-        while fast_pointer != None and fast_pointer.next != None:
+        while slow_pointer:
             prev_slow_pointer = slow_pointer
             slow_pointer = slow_pointer.next
-            fast_pointer = fast_pointer.next.next
-        if fast_pointer:
-            prev_slow_pointer.next = slow_pointer.next
-            return slow_pointer.data
-        else:
-            prev_slow_pointer.next = slow_pointer.next
-            return slow_pointer.data
+            sum = int(slow_pointer.data) + int(prev_slow_pointer.data)
+            if sum > 1:
+                print(str(sum) + " is greater than 1")
+            else:
+                print(str(sum) + "is less than 1")
 
 
 if __name__ == "__main__":
     ll = LinkedList()
     ll.insert_at_beginning(2)
-    ll.insert_at_beginning(7)
+    ll.insert_at_beginning(6)
     ll.insert_at_beginning(9)
-    ll.insert_at_beginning(5)
-    ll.insert_at_beginning(3)
-    ll.insert_at_beginning(76)
+    ll.insert_at_beginning(11)
     ll.print_linked_list()
-    print(ll.get_middle_node())
-    ll.print_linked_list()
+    print(ll.sum_of_two_LL())
