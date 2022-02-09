@@ -28,23 +28,25 @@ class LinkedList():
 
     def sum_of_two_LL(self):
         slow_pointer = self.head
-        fast_pointer = self.head
         prev_slow_pointer = self.head
-        while slow_pointer:
+        drag_pointer = self.head
+        while slow_pointer.next is not None:
             prev_slow_pointer = slow_pointer
             slow_pointer = slow_pointer.next
             sum = int(slow_pointer.data) + int(prev_slow_pointer.data)
-            if sum > 1:
-                print(str(sum) + " is greater than 1")
-            else:
-                print(str(sum) + "is less than 1")
+            if sum < 0:
+                return "less than zero"
+            elif sum == 0:
+                print("last stop is ")
+        return "End of Loop, next of slow pointer is None"
 
 
 if __name__ == "__main__":
     ll = LinkedList()
     ll.insert_at_beginning(2)
-    ll.insert_at_beginning(6)
-    ll.insert_at_beginning(9)
+    ll.insert_at_beginning(0)
+    ll.insert_at_beginning(0)
     ll.insert_at_beginning(11)
     ll.print_linked_list()
     print(ll.sum_of_two_LL())
+    ll.print_linked_list()
