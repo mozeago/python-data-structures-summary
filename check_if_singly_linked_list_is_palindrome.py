@@ -31,22 +31,22 @@ class LinkedList:
             iterate_linked_list = iterate_linked_list.next
         print(linked_list_string)
 
-    def check_is_palindrome(head):
-        stack_head = head
-        stack_str = []
-        is_palindrome = True
-        while stack_head != None:
-            stack_str.append(stack_head.data)
-            stack_head = stack_head.next
-        while head != None:
-            top_of_stack = stack_str.pop()
-            if top_of_stack == head.data:
-                is_palindrome = True
-            else:
-                is_palindrome = False
-                break
-            head = head.next
-        return is_palindrome
+    def check_is_palindrome(self, head: Node) -> bool:
+        slow_pointer = self.head
+        fast_pointer = self.head
+        stack = []
+        while fast_pointer and fast_pointer.next:
+            stack.append(fast_pointer.data)
+            print("fast pointer " + str(fast_pointer.data))
+            print("Slow pointer " + str(slow_pointer.data))
+            slow_pointer = slow_pointer.next
+            fast_pointer = fast_pointer.next.next
+        if fast_pointer:
+            slow_pointer = slow_pointer.next
+        while slow_pointer and stack:
+            if slow_pointer.data != stack.pop():
+                return False
+        return True
 
     def print_linked_list(self):
         if self.head is None:
@@ -63,8 +63,8 @@ class LinkedList:
 if __name__ == "__main__":
     ll = LinkedList()
     ll.insert_at_beginning(1)
-    ll.insert_at_beginning(2)
-    ll.insert_at_beginning(2)
+    ll.insert_at_beginning(4)
+    ll.insert_at_beginning(3)
     ll.insert_at_beginning(1)
     ll.print_linked_list()
-    ll.check_is_palindrome()
+    ll.check_is_palindrome(1)
